@@ -1,13 +1,135 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CV - Brand</title>
+    <link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="./fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container">
+          <a class="navbar-brand logo" href="#">Matej Kalc</a>
+            
+        </div>
+    </nav>
+    <main class="page cv-page">
+        <section class="portfolio-block block-intro border-bottom">
+            <div class="container">
+                <div class="avatar" style="background-image:url(&quot;./images/matej_kalc_image_1.jpeg&quot;);"></div>
+                <div class="about-me">
+                    <p>Matej Kalc</p>
+                    <a class="btn btn-outline-primary" role="button" href="#">Full stack developer</a>
+                    <br>
+                    <br>
+                    <a class="btn btn-outline-primary" role="button" href="#">Učitelj alpskega smučanja</a>
+                  </div>
+            </div>
+        </section>
+        <section class="portfolio-block projects-cards">
+            <div class="container">
+                <div class="heading">
+                    <h2>Projekti</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0"><a href="#"><img style="background-color: rgba(9, 162, 255, 0.85)" class="card-img-top scale-on-hover" src="./images/skidnevnik-logo-white.png" alt="Card Image"></a>
+                            <div class="card-body">
+                                <h6><a href="https://skidnevnik.herokuapp.com/">SKIDNEVNIK</a></h6>
+                                <p class="text-muted card-text">Spletni dnevnik namenjen učiteljem in trenerjem alpskega smučanja</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block cv">
+            <div class="container">
+                <div class="work-experience group">
+                    <div class="heading">
+                        <h2 class="text-center">Delavne izkušnje</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>SK Brdina</h3>
+                                <h4 class="organization">Učitelj alpskega smučanja</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">01/2017 - V teku</span></div>
+                        </div>
+                      </div>
+                </div>
+                <div class="education group">
+                    <div class="heading">
+                        <h2 class="text-center">Izobrazba</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Fakulteta za računalništvo in informatiko</h3>
+                                <h4 class="organization">Dodplomski študij</h4>
+                            </div>
+                            <div class="col-6"><span class="period">1/10/2018 – V teku</span></div>
+                        </div>
+                        <p class="text-muted">Fakulteta za računalništvo in informatiko Univerze v Ljubljani je največja slovenska visokošolska izobraževalna
+                           ustanova za računalništvo in informatiko z najdaljšo tradicijo izobraževanja na tem področju. Ustanovljena je bila 
+                           1. januarja 1996 po delitvi dotedanje Fakultete za elektrotehniko in računalništvo na dve fakulteti, Fakulteto za 
+                           računalništvo in informatiko ter Fakulteto za elektrotehniko, sam študij računalništva pa se je začel že leta 1973.</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>DTZ / ITS Žiga Zois</h3>
+                                <h4 class="organization">Višja šola</h4>
+                            </div>
+                            <div class="col-6"><span class="period">1/9/2013 – 30/6/2018</span></div>
+                        </div>
+                        <p class="text-muted">Na DTZ Žige Zoisa izobražujemo dijake na dveh področjih: na ekonomskem področju imamo smer Uprava, finance in marketing,
+                           na tehnološkem področju pa Gradnje, okolje in prostor.</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="contact-info portfolio-info-card">
+                        <h2>Contact Info</h2>
+                        <div class="row">
+                            <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
+                            <div class="col-9"><span>23/11/1999</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1"><i class="icon ion-at icon"></i></div>
+                            <div class="col-9"><span>matejkalc99@protonmail.com</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1"><i class="icon ion-social-github icon"></i></div>
+                            <div class="col-9"><a href="https://github.com/KalcMatej99">Github</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1"><i class="icon ion-social-linkedin icon"></i></div>
+                            <div class="col-9"><a href="https://www.linkedin.com/in/matej-kalc-8122b5164/">Linkedin</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1"><i class="icon ion-social-facebook icon"></i></div>
+                            <div class="col-9"><a href="https://www.facebook.com/matej.kalc.58">Facebook</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>Matej Kalc © 2019</p>
+        </div>
+    </footer>
+    <script src="./javascripts/jquery.min.js"></script>
+    <script src="./javascripts/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="./javascripts/script.min.js"></script>
 </body>
 
 </html>
