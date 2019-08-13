@@ -14,13 +14,22 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
         <div class="container">
-          <a class="navbar-brand logo">Matej Kalc</a>
+          <a class="navbar-brand logo" href="#">Matej Kalc</a>
+          <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" style="display: inline-block;" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#projectsSection"><strong>Projekti</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#jobsSection"><strong>Delavne izkušnje</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#educationSection"><strong>Izobrazba</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#contactSection"><strong>Kontakt</strong></a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <main class="page cv-page">
         <section class="portfolio-block block-intro border-bottom">
             <div class="container">
-                <div class="avatar" style="background-image:url(&quot;./public/images/matej_kalc_image_1.jpeg&quot;);"></div>
+                <div class="avatar" style="background-image:url(&quot;./public/images/matej_kalc_image.png&quot;);"></div>
                 <div class="about-me">
                     <p>Matej Kalc</p>
                     <a class="btn btn-outline-primary" role="button">Full stack developer</a>
@@ -30,7 +39,7 @@
                   </div>
             </div>
         </section>
-        <section class="portfolio-block projects-cards">
+        <section class="portfolio-block projects-cards" id="projectsSection">
             <div class="container">
                 <div class="heading">
                     <h2>Projekti</h2>
@@ -47,7 +56,7 @@
                 </div>
             </div>
         </section>
-        <section class="portfolio-block cv">
+        <section class="portfolio-block cv" id="jobsSection">
             <div class="container">
                 <div class="work-experience group">
                     <div class="heading">
@@ -104,7 +113,7 @@
                        </div>
                     </div>
                 </div>
-                <div class="education group">
+                <div class="education group" id="educationSection">
                     <div class="heading">
                         <h2 class="text-center">Izobrazba</h2>
                     </div>
@@ -135,7 +144,7 @@
                            na tehnološkem področju pa Gradnje, okolje in prostor.</p>
                     </div>
                 </div>
-                <div class="group">
+                <div class="group" id="contactSection">
                     <div class="contact-info portfolio-info-card">
                         <h2>Kontakt</h2>
                         <div class="row">
