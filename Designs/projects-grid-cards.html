@@ -9,16 +9,42 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/select.css">
+    <link rel="stylesheet" href="assets/css/select2.css">
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
         <div class="container"><a class="navbar-brand logo" href="#">Matej Kalc</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <main class="page projects-page">
-        
+        <section class="portfolio-block projects-cards">
+            <div class="container">
+                <div class="heading">
+                    <h2>Sorting algorithms</h2>
+                    <p>The goal is to sort a table of numbers. There exist a lot of algorithms, pick one and see how it works. Click sort.</p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form><button class="btn btn-secondary" type="button">Generate new random table</button>
+                            <div class="field"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">Insertion Sort</option><option value="13">Select Sort</option><option value="14">Bubble Sort</option></optgroup></select><label class="mb-0"
+                                    for="float-input">Select Algorithm</label></div><button class="btn btn-primary" type="button">Sort</button></form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <div class="row"></div>
     <footer class="page-footer">
         <div class="container">
             <div class="links"></div>
@@ -28,7 +54,14 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/select2-1.js"></script>
+    <script src="assets/js/select2-2.js"></script>
+    <script src="assets/js/select2-3.js"></script>
+    <script src="assets/js/select2-4.js"></script>
+    <script src="assets/js/select2-5.js"></script>
+    <script src="assets/js/select2-6.js"></script>
+    <script src="assets/js/select2.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>

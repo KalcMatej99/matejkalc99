@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Project - Sorting Algorithms</title>
+    <link rel="stylesheet" href="./public/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="./public/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="./public/stylesheets/select.css">
+    <link rel="stylesheet" href="./public/stylesheets/select2.css">
+    <style>
+        canvas {
+  width: 100%;
+  height: auto;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="./index.html">Matej Kalc</a>
+            <a onclick="generateRandomTable()">New Random Table</a>
+            <button class="btn btn-danger" onclick="sort()">Sort</button>
+        </div>
+    </nav>
+    <main class="page projects-page">
+        <section class="portfolio-block projects-cards">
+            <div class="container">
+                <div class="heading">
+                    <h2>Sorting algorithms</h2>
+                    <h4>The goal is to sort a table of numbers. There exist a lot of algorithms, pick one and see how it
+                        works. Click sort.</h4>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="field"><select id="algorithmSelect" class="form-control">
+                                    <option value="1" selected="">Insertion Sort</option>
+                                    <option value="2">Select Sort</option>
+                                    <option value="3">Bubble Sort</option>
+                                    <option value="4">Heap Sort</option>
+                                    <option value="5">Quick Sort</option>
+                                    <option value="6">Merge Sort</option>
+                                    <option value="7">Count Sort</option>
+                                </select><label class="mb-0" for="float-input">Select Algorithm</label></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <form id="formElem">
+                            <canvas width="300" height="300" id="myCanvas"></canvas>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"></div>
+            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                        class="icon ion-social-instagram-outline"></i></a><a href="#"><i
+                        class="icon ion-social-twitter"></i></a></div>
+        </div>
+    </footer>
+    <script src="./public/javascripts/jquery.min.js"></script>
+    <script src="./public/javascripts/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="./public/javascripts/select2-1.js"></script>
+    <script src="./public/javascripts/select2-2.js"></script>
+    <script src="./public/javascripts/select2-3.js"></script>
+    <script src="./public/javascripts/select2-4.js"></script>
+    <script src="./public/javascripts/select2-5.js"></script>
+    <script src="./public/javascripts/select2-6.js"></script>
+    <script src="./public/javascripts/select2.js"></script>
+    <script src="./public/javascripts/theme.js"></script>
+</body>
+
+<script>
+    const myCanvas = document.getElementById("myCanvas");
+    const ctx = myCanvas.getContext("2d");
+    var table;
+    const maxValueInTable = 100;
+
+    $(document).ready(function () {
+        generateRandomTable();
+    });
+
+    function generateRandomTable() {
+        clearAllTimeouts();
+
+        table = [];
+        for (var i = 0; i < maxValueInTable; i++) {
+            var val = Math.random() * maxValueInTable;
+            table[i] = parseInt(val, 10);
+        }
+        drawTable(table);
+    }
+
+
+    function sort() {
+        var selectedAlgorithm = document.getElementById("algorithmSelect").selectedIndex;
+        clearAllTimeouts();
+
+        switch (selectedAlgorithm) {
+            case 0: insertionSort(); break;
+            case 1: selectionSort(); break;
+            case 2: bubbleSort(); break;
+            case 3: heapSort(); break;
+            case 4: quickSort(); break;
+            case 5: mergeSort(); break;
+            case 6: countSort(); break;
+            default: break;
+        }
+
+
+    }
+
+    function swap(i, j) {
+        var temp = table[j];
+        table[j] = table[i];
+        table[i] = temp;
+    }
+
+
+    function insertionSort() {
+        tables = [];
+
+        for (var i = 0; i < table.length; i++) {
+            var j = i - 1;
+            while (j >= 0 && table[j] > table[j + 1]) {
+                swap(j, j + 1);
+                tables.push(table.map((x) => x));
+                j--;
+
+            }
+        }
+        drawTables(tables, 10);
+
+    }
+
+    function selectionSort() {
+        tables = [];
+
+        for (var i = 0; i < table.length; i++) {
+            var indexMin = i;
+            for (var j = i; j < table.length; j++) {
+                if (table[indexMin] > table[j])
+                    indexMin = j;
+
+            }
+            swap(i, indexMin);
+            tables.push(table.map((x) => x));
+        }
+        drawTables(tables, 50);
+    }
+
+    function bubbleSort() {
+        tables = [];
+
+        for (var i = 0; i < table.length; i++) {
+            for (var j = 0; j < table.length; j++) {
+                if (table[j] > table[1 + j]) {
+                    swap(j, j + 1)
+                    tables.push(table.map((x) => x));
+                }
+
+            }
+        }
+        drawTables(tables, 10);
+    }
+    function heapSort() {
+        tables = [];
+
+        function correctHeap(i, size) {
+            if (i * 2 + 1 < size) {
+                var s = i * 2 + 1;
+                if (s + 1 < size && table[s] < table[s + 1])
+                    s++;
+
+                if (table[i] < table[s]) {
+                    swap(i, s);
+                    tables.push(table.map((x) => x));
+                    correctHeap(s, size)
+                }
+            }
+        }
+
+        for (var i = table.length / 2 - 1; i >= 0; i--) {
+            correctHeap(i, table.length);
+        }
+        var r = table.length - 1;
+        while (r >= 0) {
+            swap(r, 0);
+            tables.push(table.map((x) => x));
+            correctHeap(0, r);
+            r--;
+        }
+
+        drawTables(tables, 30)
+
+    }
+
+    function quickSort() {
+        tables = [];
+
+        function razporedi(p, z) {
+            var m = table[parseInt(p + (z - p) / 2, 10)];
+
+            var i = p;
+            var j = z;
+
+            while (i <= j) {
+                while (table[i] < m) {
+                    i++;
+                }
+
+                while (table[j] > m) {
+                    j--;
+                }
+
+                if (i <= j) {
+                    swap(i, j);
+                    tables.push(table.map((x) => x));
+                    i++;
+                    j--;
+                }
+            }
+
+            if (p < j)
+                razporedi(p, j);
+
+            if (i < z)
+                razporedi(i, z);
+        }
+
+        razporedi(0, table.length - 1);
+        drawTables(tables, 30);
+    }
+
+    function mergeSort() {
+        tables = [];
+
+        function msort(p, sre, z) {
+
+            const velikost1podtabela = sre - p + 1;
+            const velikost2podtabela = z - sre;
+
+            var t1 = [];
+            var t2 = [];
+
+            for (var i = 0; i < velikost1podtabela; i++)
+                t1[i] = table[p + i];
+            for (var j = 0; j < velikost2podtabela; j++)
+                t2[j] = table[sre + 1 + j];
+
+            var l = 0;
+            var r = 0;
+            var k = p;
+
+            while (l < velikost1podtabela && r < velikost2podtabela) {
+
+                if (t1[l] <= t2[r]) {
+                    table[k] = t1[l++];
+                } else {
+                    table[k] = t2[r++];
+                }
+                tables.push(table.map((x) => x));
+
+                k++;
+            }
+
+            while (l < velikost1podtabela) {
+                table[k++] = t1[l++];
+                tables.push(table.map((x) => x));
+            }
+
+            while (r < velikost2podtabela) {
+                table[k++] = t2[r++];
+                tables.push(table.map((x) => x));
+            }
+        }
+
+        function sortInitializer(p, z) {
+            if (p < z) {
+                var sre = parseInt((p + z) / 2, 10);
+                sortInitializer(p, sre);
+                sortInitializer(sre + 1, z);
+                msort(p, sre, z);
+            }
+        }
+
+        sortInitializer(0, table.length - 1);
+        drawTables(tables, 30);
+    }
+
+    function countSort() {
+        tables = [];
+
+        var c = Array(maxValueInTable + 1).fill(0);
+        var b = Array(table.length).fill(0);
+
+
+        for (var i = 0; i < table.length; i++)
+            c[table[i]]++;
+
+        // Kumulativa
+        for (var i = 1; i <= maxValueInTable; i++) {
+            c[i] += c[i - 1];
+        }
+
+        for (var i = table.length - 1; i >= 0; i--) {
+            var x = table[i];
+            c[x]--;
+            b[c[x]] = x;
+            tables.push(b.map((x) => x));
+        }
+
+        drawTables(tables, 50);
+    }
+
+    function drawTable(table) {
+        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        var widthOfElem = myCanvas.width / table.length;
+        for (var i = 0; i < table.length; i++) {
+            var val = table[i];
+            if (val < maxValueInTable / 7)
+                ctx.fillStyle = "rgb(238, 130, 238)";
+            else if (val < 2 * maxValueInTable / 7)
+                ctx.fillStyle = "rgb(75,0,130)";
+            else if (val < 3 * maxValueInTable / 7)
+                ctx.fillStyle = "rgb(0,0,255)";
+            else if (val < 4 * maxValueInTable / 7)
+                ctx.fillStyle = "rgb(0,128,0)";
+            else if (val < 5 * maxValueInTable / 7)
+                ctx.fillStyle = "rgb(255,255,0)";
+            else if (val < 6 * maxValueInTable / 7)
+                ctx.fillStyle = "rgb(255,165,0)";
+            else
+                ctx.fillStyle = "rgb(255,0,0)";
+            ctx.fillRect(i * widthOfElem, 0, widthOfElem, val / maxValueInTable * myCanvas.height);
+        }
+    }
+    function drawTables(tables, speed) {
+        var indexTable = 0;
+        for (var count = 0; count < tables.length; count++) {
+
+            setTimeout(() => {
+                if (tables != null && indexTable < tables.length) {
+                    drawTable(tables[indexTable])
+                    indexTable++;
+                    if (indexTable >= tables.length) {
+                        clearAllTimeouts();
+                        tables = null;
+                    }
+                }
+            }, speed * count);
+        }
+    }
+
+    function clearAllTimeouts() {
+        var highestTimeoutId = setTimeout(";");
+        for (var i = 0; i < highestTimeoutId; i++) {
+            clearTimeout(i);
+        }
+    }
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+</script>
+
+</html>
