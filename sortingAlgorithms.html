@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="./public/stylesheets/select2.css">
     <style>
         canvas {
-  width: 100%;
-  height: auto;
-}
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -45,6 +45,8 @@
                                     <option value="5">Quick Sort</option>
                                     <option value="6">Merge Sort</option>
                                     <option value="7">Count Sort</option>
+                                    <option value="8">Shell Sort</option>
+                                    <option value="9">Comb Sort</option>
                                 </select><label class="mb-0" for="float-input">Select Algorithm</label></div>
                         </form>
                     </div>
@@ -118,6 +120,8 @@
             case 4: quickSort(); break;
             case 5: mergeSort(); break;
             case 6: countSort(); break;
+            case 7: shellsort(); break;
+            case 8: combsort(); break;
             default: break;
         }
 
@@ -324,6 +328,56 @@
             tables.push(b.map((x) => x));
         }
 
+        drawTables(tables, 50);
+    }
+
+    function shellsort() {
+        var tables = [];
+
+        for (var gap = parseInt(table.length / 2, 10); gap > 0; gap = parseInt(gap / 2, 10)) {
+            console.log(gap);
+            for (var i = gap; i < table.length; i++) {
+                var temp = table[i];
+                for (var j = i; j >= gap && table[j - gap] > temp; j -= gap) {
+                    table[j] = table[j - gap];
+                    tables.push(table.map((x) => x));
+                }
+                table[j] = temp;
+                tables.push(table.map((x) => x));
+            }
+        }
+        drawTables(tables, 10);
+    }
+
+    function combsort() {
+        var tables = [];
+
+        var gap = table.length; // Initialize gap size
+        var shrink = 1.3; // Set the gap shrink factor
+        var sorted = false;
+
+        while (sorted == false) {
+
+            gap = parseInt(gap / shrink, 10);
+            if (gap <= 1) {
+                gap = 1;
+                sorted = true; // If there are no swaps this pass, we are done
+            }
+
+            // A single "comb" over the table list
+            var i = 0;
+            while (i + gap < table.length) { // See Shell sort for a similar idea
+                if (table[i] > table[i + gap]) {
+                    swap(i, i + gap);
+                    tables.push(table.map((x) => x));
+                    sorted = false
+                    // If this assignment never happens within the loop,
+                    // then there have been no swaps and the list is sorted.
+                }
+
+                i++;
+            }
+        }
         drawTables(tables, 50);
     }
 
