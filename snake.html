@@ -93,8 +93,8 @@
         var distance = Array(4);
 
         for (var i = 0; i < 4; i++) {
-            distance[i] = (corners[i][0] - xPos) ^ 2 + (corners[i][1] - yPos) ^ 2;
-            alert(distance[i]);
+            distance[i] = (corners[i][0] - xPos) * (corners[i][0] - xPos) + (corners[i][1] - yPos) * (corners[i][1] - yPos);
+           
         }
 
         if (distance[0] <= distance[2] && distance[0] <= distance[3] && distance[1] <= distance[2] && distance[1] <= distance[3]) {
