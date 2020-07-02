@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./public/stylesheets/select2.css">
     <style>
         canvas {
-            width: 100%;
-            height: auto;
+            max-height: 60%; 
+            max-width: 60%; 
         }
 
         html,
@@ -24,13 +24,6 @@
             overflow: hidden
         }
 
-        .center {
-            margin: auto;
-            top: 50%;
-            max-width: 35%;
-            left: 50%;
-            padding: 10px;
-        }
     </style>
 </head>
 
@@ -41,11 +34,9 @@
         </div>
     </nav>
     <main class="page project-page">
-        <div class="center">
-            <h2>Play Snake</h2>
-            <canvas id="myCanvas" class="canvas" height="300px" width="300px" style="background-color: #3e3e3e">
+            <canvas id="myCanvas" class="canvas" style="background-color: #3e3e3e">
             </canvas>
-        </div>
+            
     </main>
     <footer class="page-footer dark">
         <div class="footer-copyright">
@@ -120,6 +111,12 @@
 
     $(document).ready(function () {
         alert("Use arrows or touch the screen to move the snake. Collect red fruits to grow.")
+        
+        
+        var size = Math.min(window.innerWidth * 12/15, window.innerHeight * 12/15);
+        console.log(size);
+        myCanvas.width = size;
+        myCanvas.height = size;
         game = newGame(20, 20);
 
         setInterval(function () { move(); }, 200);
