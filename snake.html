@@ -97,13 +97,13 @@
            
         }
 
-        if (distance[0] <= distance[2] && distance[0] <= distance[3] && distance[1] <= distance[2] && distance[1] <= distance[3]) {
+        if (game.snakeDirection != 0 && distance[0] <= distance[2] && distance[0] <= distance[3] && distance[1] <= distance[2] && distance[1] <= distance[3]) {
             game.snakeDirection = 2;
-        } else if (distance[0] <= distance[1] && distance[0] <= distance[3] && distance[2] <= distance[1] && distance[2] <= distance[3]) {
+        } else if (game.snakeDirection != 1 && distance[0] <= distance[1] && distance[0] <= distance[3] && distance[2] <= distance[1] && distance[2] <= distance[3]) {
             game.snakeDirection = 3;
-        } else if (distance[1] <= distance[0] && distance[1] <= distance[2] && distance[3] <= distance[0] && distance[3] <= distance[2]) {
+        } else if (game.snakeDirection != 3 && distance[1] <= distance[0] && distance[1] <= distance[2] && distance[3] <= distance[0] && distance[3] <= distance[2]) {
             game.snakeDirection = 1;
-        } else if (distance[2] <= distance[0] && distance[2] <= distance[1] && distance[3] <= distance[0] && distance[3] <= distance[1]) {
+        } else if (game.snakeDirection != 2 && distance[2] <= distance[0] && distance[2] <= distance[1] && distance[3] <= distance[0] && distance[3] <= distance[1]) {
             game.snakeDirection = 0;
         }
     }
@@ -127,8 +127,7 @@
         var errno = moveSnake(game);
         if (errno == -1) {
             alert("Game Over!");
-            //game = newGame(20, 20);
-            game = null;
+            game = newGame(20, 20);
         } else {
             drawCanvas(game);
         }
