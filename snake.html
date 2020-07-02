@@ -41,7 +41,6 @@
     <main class="page project-page">
         <div class="center">
             <h2>Play Snake</h2>
-            <p>Use arrows up, left, down and right to move. Eat the fruits (red blocks) to grow.</p>
             <canvas id="myCanvas" class="canvas" height="300px" width="300px" style="background-color: #3e3e3e">
             </canvas>
         </div>
@@ -118,9 +117,11 @@
     });
 
     $(document).ready(function () {
+        alert("Use arrows or touch the screen to move the snake. Collect red fruits to grow.")
         game = newGame(20, 20);
 
         setInterval(function () { move(); }, 200);
+        
     });
 
     function move() {
