@@ -65,12 +65,9 @@
         </section>
     </main>
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="links"></div>
-            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-                        class="icon ion-social-instagram-outline"></i></a><a href="#"><i
-                        class="icon ion-social-twitter"></i></a></div>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>Matej Kalc © 2019</p>
         </div>
     </footer>
     <script src="./public/javascripts/jquery.min.js"></script>
@@ -361,18 +358,14 @@
             gap = parseInt(gap / shrink, 10);
             if (gap <= 1) {
                 gap = 1;
-                sorted = true; // If there are no swaps this pass, we are done
+                sorted = true;
             }
-
-            // A single "comb" over the table list
             var i = 0;
-            while (i + gap < table.length) { // See Shell sort for a similar idea
+            while (i + gap < table.length) {
                 if (table[i] > table[i + gap]) {
                     swap(i, i + gap);
                     tables.push(table.map((x) => x));
-                    sorted = false
-                    // If this assignment never happens within the loop,
-                    // then there have been no swaps and the list is sorted.
+                    sorted = false;
                 }
 
                 i++;
@@ -380,6 +373,8 @@
         }
         drawTables(tables, 50);
     }
+
+
 
     function drawTable(table) {
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
