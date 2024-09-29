@@ -7,8 +7,10 @@
     "name": "Matej Kalc",
     "email": "matejkalc99@protonmail.com"
   },
+  "builds": [{ "src": "package.json", "use": "@vercel/next" }],
   "scripts": {
     "dev": "next dev",
+    "now-build": "next build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,7 +23,7 @@
     "@types/react": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
-    "next": "*",
+    "next": "^14.0.0",
     "react": "*",
     "react-dom": "*",
     "react-tippy": "*",
@@ -37,7 +39,7 @@
     "autoprefixer": "*",
     "postcss": "*",
     "prettier": "*",
-    "tailwindcss": "^3.4.13",
+    "tailwindcss": "*",
     "typescript": "*"
   }
 }
