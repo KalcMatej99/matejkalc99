@@ -1,0 +1,43 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "They are the source code for my personal web page. Everything is available. NextJS is made using Tailwind CSS technologies.",
+  "main": "",
+  "repository": "https://github.com/AdemCanCertel/website.git",
+  "author": {
+    "name": "AdemCan Certel",
+    "email": "ademcancertel619@gmail.com",
+    "url": "https://ademcancertel.github.io"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write --check './{src}/**/*.{js,ts,tsx,jsx}'"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "*",
+    "@fortawesome/free-solid-svg-icons": "*",
+    "@fortawesome/react-fontawesome": "*",
+    "@types/react": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "next": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-tippy": "*",
+    "yarn": "*"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/react": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "autoprefixer": "*",
+    "postcss": "*",
+    "prettier": "*",
+    "tailwindcss": "*",
+    "typescript": "*"
+  }
+}
