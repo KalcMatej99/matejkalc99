@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "They are the source code for my personal web page. Everything is available. NextJS is made using Tailwind CSS technologies.",
   "main": "",
-  "repository": "https://github.com/AdemCanCertel/website.git",
   "author": {
-    "name": "AdemCan Certel",
-    "email": "ademcancertel619@gmail.com",
-    "url": "https://ademcancertel.github.io"
+    "name": "Matej Kalc",
+    "email": "matejkalc99@protonmail.com"
   },
   "scripts": {
     "dev": "next dev",
@@ -27,6 +25,8 @@
     "react": "*",
     "react-dom": "*",
     "react-tippy": "*",
+    "uuid": "*",
+    "vercel": "*",
     "yarn": "*"
   },
   "devDependencies": {
