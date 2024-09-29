@@ -3,6 +3,10 @@ import Tech from '../components/Tech';
 import Repo from '../components/Repository/Repo';
 import Edu from '../components/Education';
 import Head from 'next/head';
+import linkedinLogo from './../assets/img/linkedin.png';
+import githubLogo from './../assets/img/github-mark-white.png';
+import Image from 'next/image'
+
 
 export default function HomePage() {
     return  (
@@ -19,16 +23,33 @@ export default function HomePage() {
         <main>
         <div className="full-container flex">
             <div className="space-y-4">
-            <h1 className="text-4xl font-semibold text-white"><Link href="/">Hi, I'm Matej Kalc</Link></h1>
-            <p className="mt-5 font-normal leading-relaxed">
-                Data scientist from Triest, Italy.
-                <br/>
-                I have about 4 years of experience with building machine learning applications.
-                <br/>
-                Projects I have worked on include computer vision, llm, graph neural networks and more.
-                <br/>
-                In my free time a ski and train calisthenics.
-            </p>
+                <h1 className="text-4xl font-semibold text-white"><Link href="/">Hi, I'm Matej Kalc!</Link></h1>
+                <p className="mt-5 font-normal leading-relaxed">
+                    Data scientist from Triest, Italy.
+                    <br/>
+                    I have about 4 years of experience with building machine learning applications.
+                    <br/>
+                    Projects I have worked on include computer vision, llm, graph neural networks and more.
+                    <br/>
+                    In my free time a ski and train calisthenics.
+                    <br/>
+                    Find me on:
+                </p>
+                <div className="grid grid-cols-2 gap-5 mt-4 sm:gird-cols-3 md:grid-cols-4">
+                    <div className="flex space-x-2 text-white items-center overflow-hidden">
+                        <Link href="https://www.linkedin.com/in/matej-kalc-8122b5164/" target="_blank" rel="noreferrer">
+                            <Image src={linkedinLogo} width={56} height={56} alt="Python logo" className="flex-shrink-0" />                
+                        </Link>
+                        <span className='lang font-medium'>LinkedIn</span>
+                    </div>
+                    <div className="flex space-x-2 text-white items-center overflow-hidden">
+                        <Link href="https://github.com/KalcMatej99" target="_blank" rel="noreferrer">
+                            <Image src={githubLogo} width={28} height={28} alt="Python logo" className="flex-shrink-0" />                
+                        </Link>
+                        <span className='lang font-medium'>Github</span>
+                    </div>
+                </div>
+
             </div>
         </div>
         
@@ -36,7 +57,7 @@ export default function HomePage() {
             <Tech/>
         </div>
 
-        <div className="full-container mt-20">
+        <div className="full-container mt-10">
             <Repo/>
         </div>
 
