@@ -22,7 +22,7 @@ export default function Repo() {
                                     <span className="text-white font-semibold">Automobile insurance fraud detection</span>
                                 </div>
                                 <p className="text-white overflow-hidden font-sans">
-                                    A machine learning project that detects automobile insurance fraud using GNN.
+                                    A machine learning project that detects automobile insurance fraud using graph neural networks.
                                     The model is evaluated on real word data provided by one of the ten biggest insurance companies in the world.
                                 </p>
                                 <div className="mt-1 flex space-x-2">
@@ -40,7 +40,7 @@ export default function Repo() {
                                     <span className="text-white font-semibold">Traffic prediction</span>
                                 </div>
                                 <p className="text-white overflow-hidden font-sans">
-                                    Forecast traffic using temporal graph neural networks.
+                                    Traffic forecasting using temporal graph neural networks.
                                     The model is evaluated on real word data of an european country.
                                 </p>
                                 <div className="mt-1 flex space-x-2">
@@ -58,7 +58,7 @@ export default function Repo() {
                                     <span className="text-white font-semibold">Word sense disambiguation</span>
                                 </div>
                                 <p className="text-white overflow-hidden font-sans">
-                                    A NLP project that disambiguates words based on the context. We used the SloBERTa model.
+                                    An NLP project that disambiguates words based on context in Slovenian using SloBERTa.
                                 </p>
                                 <div className="mt-1 flex space-x-2">
                                     <Image src={pythonLogo} width={28} height={28} alt="Python logo" className="flex-shrink-0  h-7 w-7" />

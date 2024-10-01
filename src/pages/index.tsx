@@ -29,7 +29,7 @@ export default function HomePage() {
                             <br />
                             Projects I have worked on include computer vision, llm, graph neural networks and more.
                             <br />
-                            In my free time a ski and train calisthenics.
+                            In my free time I ski and train calisthenics.
                             <br />
                             Find me on:
                         </p>
