@@ -54,13 +54,10 @@ export default function HomePage() {
                     <div className="space-y-4">
                         <h1 className="text-4xl font-semibold text-white"><Link href="/">Hi, I'm Matej Kalc!</Link></h1>
                         <p className="mt-5 font-normal leading-relaxed">
-                            Data scientist from Triest, Italy.
-                            <br />
-                            I have about 4 years of experience with building machine learning applications.
-                            <br />
-                            Projects I have worked on include computer vision, llm, graph neural networks and more.
-                            <br />
-                            In my free time I ski and train calisthenics.
+                            I'm a data scientist from Trieste, Italy, with 4 years of experience in <b>machine learning</b>,
+                            specializing in time series and graph neural networks. I've worked on projects like
+                            insurance fraud detection and traffic prediction. Outside of work, I enjoy skiing and calisthenics,
+                            always looking to challenge myself both physically and mentally.
                             <br />
                             Find me on:
                         </p>
