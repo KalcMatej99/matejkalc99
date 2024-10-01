@@ -6,7 +6,8 @@ import Head from 'next/head';
 import linkedinLogo from './../assets/img/linkedin.png';
 import githubLogo from './../assets/img/github-mark-white.png';
 import Image from 'next/image'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 export default function HomePage() {
     return (
@@ -68,13 +69,25 @@ export default function HomePage() {
                                 <Link href="https://www.linkedin.com/in/matej-kalc-8122b5164/" target="_blank" rel="noreferrer">
                                     <Image src={linkedinLogo} width={56} height={56} alt="Python logo" className="flex-shrink-0" />
                                 </Link>
-                                <span className='lang font-medium'>LinkedIn</span>
+                                <Link href="https://www.linkedin.com/in/matej-kalc-8122b5164/" target="_blank" rel="noreferrer">
+                                    <span className='lang font-medium'>LinkedIn</span>
+                                </Link>
                             </div>
                             <div className="flex space-x-2 text-white items-center overflow-hidden">
                                 <Link href="https://github.com/KalcMatej99" target="_blank" rel="noreferrer">
                                     <Image src={githubLogo} width={28} height={28} alt="Python logo" className="flex-shrink-0" />
                                 </Link>
-                                <span className='lang font-medium'>Github</span>
+                                <Link href="https://github.com/KalcMatej99" target="_blank" rel="noreferrer">
+                                    <span className='lang font-medium'>Github</span>
+                                </Link>
+                            </div>
+                            <div className="flex space-x-2 text-white items-center overflow-hidden">
+                                <Link href="mailto:matejkalc99@protonmail.com" target="_blank" rel="noreferrer">
+                                    <FontAwesomeIcon icon={faEnvelope} width={28} height={28} />
+                                </Link>
+                                <Link href="mailto:matejkalc99@protonmail.com" target="_blank" rel="noreferrer">
+                                    <span className='lang font-medium'>Mail</span>
+                                </Link>
                             </div>
                         </div>
 
